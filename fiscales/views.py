@@ -45,7 +45,7 @@ def choice_home(request):
         return redirect('login')
     try:
         user.voluntario
-        return redirect('donde-fiscalizo')
+        return redirect('inicio')
     except Voluntario.DoesNotExist:
         if user.groups.filter(name='prensa').exists():
             return redirect('/prensa/')
@@ -263,8 +263,8 @@ class MesaActa(BaseVoluntario, UpdateView):
         return redirect(self.object.get_absolute_url())
 
 
-class DondeFiscalizo(BaseVoluntario):
-    template_name = "fiscales/donde-fiscalizo.html"
+class Inicio(BaseVoluntario):
+    template_name = "fiscales/inicio.html"
 
 
 @login_required
@@ -313,7 +313,7 @@ def cargar_resultados(request, asignacion_id):
         else:
             messages.success(request, 'Guardado correctamente')
 
-        return redirect('donde-fiscalizo')
+        return redirect('inicio')
 
     return render(request, "fiscales/carga.html",
                   {'formset': formset, 'object': mesa})

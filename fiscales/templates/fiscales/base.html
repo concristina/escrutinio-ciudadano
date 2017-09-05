@@ -20,7 +20,7 @@
         {% endcomment %}
 
 
-        {% url 'donde-fiscalizo' as url %}
+        {% url 'inicio' as url %}
         <li {% if url in request.path %} class="active"{% endif %}>
             <a href="{{ url }}" class="collapsible-header" data-turbolinks="false">Mis actas<i class="material-icons">toc</i></a>
         </li>
