@@ -1,0 +1,23 @@
+{% extends 'material/frontend/base.html' %}
+{% load staticfiles %}
+{% block extrahead %}
+<style type="text/css">
+    .registration .sidebar {
+        opacity: .90
+    }
+</style>
+{% endblock %}
+
+{% block favicon %}<link href="{% static 'img/favicon.png' %}" rel="shortcut icon">{% endblock %}
+{% load i18n static %}
+
+        {% block sidenav_header %}
+        <li>
+
+
+            <div class="card-image">
+              <img src="{% static 'img/uc.png' %}" alt="" class="responsive-img"/>
+
+            </div>
+        </li>
+        {% endblock %}

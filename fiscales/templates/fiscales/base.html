@@ -1,0 +1,49 @@
+{% extends "material/frontend/base_site.html" %}
+
+{% block page_title %}Fiscal de Córdoba Ciudadana{% endblock %}
+
+
+        {% block sidenav_items %}
+
+        {% comment %}
+        <li class="active">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a href="{{ module.index_url }}" class="collapsible-header active">{{ module.verbose_name }}{{ module.icon|safe }}</a>
+                    <div class="collapsible-body" style="display:block">
+                        {% include module.menu %}
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+        {% endcomment %}
+
+
+        {% url 'donde-fiscalizo' as url %}
+        <li {% if url in request.path %} class="active"{% endif %}>
+            <a href="{{ url }}" class="collapsible-header" data-turbolinks="false">Mis actas<i class="material-icons">toc</i></a>
+        </li>
+
+
+        {% url 'mis-datos' as url %}
+        <li {% if url in request.path %} class="active"{% endif %}>
+            <a href="{{ url }}" class="collapsible-header" data-turbolinks="false">Mis datos<i class="material-icons">tag_faces</i></a>
+        </li>
+
+
+        <li>
+            <a href="{% url 'logout' %}" class="collapsible-header"  data-turbolinks="false">Cerrar sesión<i class="material-icons">exit_to_app</i></a>
+        </li>
+
+        {% endblock sidenav_items %}
+
+
+
+{% block content %}
+<div class="left-panel">
+{% block left-panel %}
+{% endblock left-panel %}
+</div>
+{% block right-panel %}{% endblock right-panel %}
+{% endblock %}
