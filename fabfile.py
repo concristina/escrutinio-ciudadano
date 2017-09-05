@@ -41,7 +41,7 @@ def deploy():
     run("source /virtualenvs/escrutinio-ciudadano/bin/activate")
     with cd('/projects/escrutinio-ciudadano'):
         run("git pull")
-        run("supervisorctl restart escrutinio-ciudadano")
+        run("supervisorctl restart escrutiniociudadano")
 
 
 def full_deploy():
@@ -51,4 +51,4 @@ def full_deploy():
         run("/virtualenvs/escrutinio-ciudadano/bin/pip install -r requirements.txt")
         run("/virtualenvs/escrutinio-ciudadano/bin/python manage.py migrate")
         run("/virtualenvs/escrutinio-ciudadano/bin/python manage.py collectstatic --noinput")
-        run("supervisorctl restart escrutinio-ciudadano")
+        run("supervisorctl restart escrutiniociudadano")
