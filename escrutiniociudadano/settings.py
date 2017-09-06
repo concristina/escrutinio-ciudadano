@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'analytical',
     'anymail',
     'raven.contrib.django.raven_compat',
     'localflavor',
@@ -214,6 +215,7 @@ DATABASES = {
     }
 }
 
+GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-XXXXXX-X'
 
 try:
     from .local_settings import *
